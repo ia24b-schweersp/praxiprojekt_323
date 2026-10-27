@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titel %}Statistik{% endblock %}
+{% block inhalt %}
+<h1>Statistik</h1>
+<table>
+    <tr><th>Kennzahl</th><th>Wert</th></tr>
+    <tr><td>Anzahl Filme</td><td>{{ k.anzahl }}</td></tr>
+    <tr><td>Ø Bewertung ab 2000</td><td>{{ k.schnitt_ab_2000 }}</td></tr>
+    <tr><td>Ø Bewertung vor 2000</td><td>{{ k.schnitt_vor_2000 }}</td></tr>
+    <tr><td>Stunden Überlänge-Filme (≥ 150 min)</td><td>{{ k.stunden_ueberlange }} h</td></tr>
+</table>
+<h2>Stimmen pro Jahrzehnt</h2>
+<table>
+    <tr><th>Jahrzehnt</th><th>Stimmen</th></tr>
+    {% for jahrzehnt, stimmen in k.stimmen_pro_jahrzehnt.items() %}
+        <tr><td>{{ jahrzehnt }}er</td><td>{{ "{:,}".format(stimmen).replace(",", "'") }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

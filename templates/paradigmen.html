@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titel %}Paradigmen{% endblock %}
+{% block inhalt %}
+<h1>Paradigmen im Vergleich</h1>
+
+<h2>Pure function: formatiere_film</h2>
+<ul>{% for zeile in formatiert %}<li>{{ zeile }}</li>{% endfor %}</ul>
+
+<h2>Mutation vs. immutable (+0.5 Bonus)</h2>
+<table>
+    <tr><th></th><th>Vorher</th><th>Nachher</th></tr>
+    <tr><td>Mutierend (Liste von Dicts)</td><td>{{ mutation.vorher }}</td><td>{{ mutation.nachher }} ← Original überschrieben</td></tr>
+    <tr><td>Immutable (frozen dataclass)</td><td>{{ immutable.original }}</td><td>{{ immutable.kopie }} ← neue Objekte, Original bleibt</td></tr>
+</table>
+
+<h2>Ø Bewertung pro Genre: prozedural / OO / funktional</h2>
+<p>Alle drei Ergebnisse gleich: <strong>{{ prozedural == oo == funktional }}</strong></p>
+<table>
+    <tr><th>Genre</th><th>Prozedural</th><th>OO</th><th>Funktional</th></tr>
+    {% for genre in funktional %}
+        <tr><td>{{ genre }}</td><td>{{ prozedural[genre] }}</td><td>{{ oo[genre] }}</td><td>{{ funktional[genre] }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

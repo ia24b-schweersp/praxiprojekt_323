@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block titel %}Genre-Bericht{% endblock %}
+{% block inhalt %}
+<h1>Genre-Bericht</h1>
+<table>
+    <tr><th>Genre</th><th>Filme</th><th>Ø Bewertung</th><th>Laufzeit</th><th>Klasse</th></tr>
+    {% for z in zeilen %}
+        <tr><td>{{ z.genre }}</td><td>{{ z.anzahl }}</td><td>{{ z.schnitt }}</td>
+            <td>{{ z.laufzeit_h }} h</td><td class="{{ z.klasse }}">{{ z.klasse }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

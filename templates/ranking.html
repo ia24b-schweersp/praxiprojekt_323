@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block titel %}Ranking{% endblock %}
+{% block inhalt %}
+<h1>Ranking</h1>
+<form method="get">
+    Sortieren nach
+    {% for i in range(2) %}
+        <select name="kriterium">
+            {% for k in alle_kriterien %}
+                <option value="{{ k }}" {% if kriterien|length > i and kriterien[i] == k %}selected{% endif %}>{{ k }}</option>
+            {% endfor %}
+        </select>
+        {% if i == 0 %} dann {% endif %}
+    {% endfor %}
+    <select name="richtung">
+        <option value="ab" {% if absteigend %}selected{% endif %}>absteigend</option>
+        <option value="auf" {% if not absteigend %}selected{% endif %}>aufsteigend</option>
+    </select>
+    <button>Anwenden</button>
+</form>
+
+<h2>Top-Regie (mind. 2 Filme)</h2>
+<table>
+    <tr><th>Regie</th><th>Filme</th><th>Ø Bewertung</th><th>Stimmen</th></tr>
+    {% for e in top %}
+        <tr><td>{{ e.regie }}</td><td>{{ e.anzahl }}</td><td>{{ e.schnitt }}</td><td>{{ e.stimmen }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Filme</h2>
+<table>
+    <tr><th>#</th><th>Titel</th><th>Jahr</th><th>Bewertung</th><th>Stimmen</th><th>Dauer</th></tr>
+    {% for f in filme %}
+        <tr><td>{{ loop.index }}</td><td>{{ f.titel }}</td><td>{{ f.jahr }}</td>
+            <td>{{ f.bewertung }}</td><td>{{ f.stimmen }}</td><td>{{ f.dauer }} min</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Alle Regisseur:innen</h2>
+<table>
+    <tr><th>Regie</th><th>Filme</th><th>Ø Bewertung</th></tr>
+    {% for e in regie %}
+        <tr><td>{{ e.regie }}</td><td>{{ e.anzahl }}</td><td>{{ e.schnitt }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block titel %}Suche{% endblock %}
+{% block inhalt %}
+<h1>Filmsuche</h1>
+<p class="hinweis">Modus: <strong>{{ modus }}</strong> –
+    {% if modus == "deklarativ" %}
+        <a href="{{ url_for('suche_imperativ_route', q=q, genre=genre) }}">imperative Variante ansehen</a>
+    {% else %}
+        <a href="{{ url_for('suche_route', q=q, genre=genre) }}">deklarative Variante ansehen</a>
+    {% endif %}
+</p>
+<form method="get">
+    <input name="q" value="{{ q }}" placeholder="Titel oder Regie">
+    <select name="genre">
+        <option value="">Alle Genres</option>
+        {% for g in genres %}
+            <option value="{{ g }}" {% if g == genre %}selected{% endif %}>{{ g }}</option>
+        {% endfor %}
+    </select>
+    <button>Suchen</button>
+</form>
+<p>{{ filme|length }} Treffer – Gesamtlaufzeit: <strong>{{ laufzeit }}</strong></p>
+<table>
+    <tr><th>Titel</th><th>Jahr</th><th>Genre</th><th>Regie</th><th>Bewertung</th><th>Dauer</th></tr>
+    {% for f in filme %}
+        <tr>
+            <td><a href="{{ url_for('film_route', film_id=f.id) }}">{{ f.titel }}</a></td>
+            <td>{{ f.jahr }}</td><td>{{ f.genre }}</td><td>{{ f.regie }}</td>
+            <td>{{ f.bewertung }}</td><td>{{ f.dauer }} min</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

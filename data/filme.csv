@@ -1,0 +1,33 @@
+id,titel,jahr,genre,regie,bewertung,stimmen,dauer
+1,The Shawshank Redemption,1994,Drama,Frank Darabont,9.3,2900000,142
+2,The Godfather,1972,Krimi,Francis Ford Coppola,9.2,2000000,175
+3,The Dark Knight,2008,Action,Christopher Nolan,9.0,2900000,152
+4,Pulp Fiction,1994,Krimi,Quentin Tarantino,8.9,2200000,154
+5,Inception,2010,Science-Fiction,Christopher Nolan,8.8,2600000,148
+6,Forrest Gump,1994,Drama,Robert Zemeckis,8.8,2300000,142
+7,The Matrix,1999,Science-Fiction,Lana Wachowski,8.7,2100000,136
+8,Interstellar,2014,Science-Fiction,Christopher Nolan,8.7,2200000,169
+9,Spirited Away,2001,Animation,Hayao Miyazaki,8.6,900000,125
+10,Parasite,2019,Thriller,Bong Joon Ho,8.5,950000,132
+11,The Lion King,1994,Animation,Roger Allers,8.5,1100000,88
+12,Back to the Future,1985,Science-Fiction,Robert Zemeckis,8.5,1300000,116
+13,Gladiator,2000,Action,Ridley Scott,8.5,1600000,155
+14,Alien,1979,Science-Fiction,Ridley Scott,8.5,950000,117
+15,Django Unchained,2012,Western,Quentin Tarantino,8.5,1700000,165
+16,The Good the Bad and the Ugly,1966,Western,Sergio Leone,8.8,800000,178
+17,My Neighbor Totoro,1988,Animation,Hayao Miyazaki,8.1,380000,86
+18,Jaws,1975,Thriller,Steven Spielberg,8.1,650000,124
+19,Jurassic Park,1993,Abenteuer,Steven Spielberg,8.2,1100000,127
+20,Raiders of the Lost Ark,1981,Abenteuer,Steven Spielberg,8.4,1000000,115
+21,Mad Max: Fury Road,2015,Action,George Miller,8.1,1100000,120
+22,Amélie,2001,Komödie,Jean-Pierre Jeunet,8.3,780000,122
+23,The Grand Budapest Hotel,2014,Komödie,Wes Anderson,8.1,900000,99
+24,Groundhog Day,1993,Komödie,Harold Ramis,8.0,680000,101
+25,Memento,2000,Thriller,Christopher Nolan,8.4,1300000,113
+26,Titanic,1997,Drama,James Cameron,7.9,1300000,194
+27,Avatar,2009,Science-Fiction,James Cameron,7.9,1400000,162
+28,The Hateful Eight,2015,Western,Quentin Tarantino,7.8,650000,168
+29,Tenet,2020,Action,Christopher Nolan,7.3,600000,150
+30,Cats,2019,Musical,Tom Hooper,2.8,55000,110
+31,Mamma Mia!,2008,Musical,Phyllida Lloyd,6.5,260000,108
+32,The Room,2003,Drama,Tommy Wiseau,3.6,110000,99

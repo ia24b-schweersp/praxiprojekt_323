@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block titel %}{{ film.titel }}{% endblock %}
+{% block inhalt %}
+<h1>{{ film.titel }} ({{ film.jahr }})</h1>
+<table>
+    <tr><th>Genre</th><td>{{ film.genre }}</td></tr>
+    <tr><th>Regie</th><td>{{ film.regie }}</td></tr>
+    <tr><th>Bewertung</th><td>{{ film.bewertung }}</td></tr>
+    <tr><th>Stimmen</th><td>{{ film.stimmen }}</td></tr>
+    <tr><th>Dauer</th><td>{{ film.dauer }} min</td></tr>
+</table>
+<a href="{{ url_for('suche_route') }}">← zurück</a>
+{% endblock %}
